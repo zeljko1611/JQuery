@@ -1,0 +1,40 @@
+<html>
+
+<head>
+		<title>JAVASCRIPT JQUERY AJAX</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+	
+<body>
+
+
+<center><h1>JQurey</h1></center>
+<center><button id="prvo">Prvo dugme</button></center>
+<center><button id="drugo">Drugo dugme</button></center>
+
+
+</body>
+
+
+</html>
+
+<script>
+	
+$(document).ready(function(){
+  $("#prvo").click(function(){
+    $('h1').css('color', 'green');
+    $('h1').after('<h2>AJAX</h2>');
+  });
+
+  $("#drugo").click(function(){
+    $.get("lokacija/lokacija.php", function(data){
+
+    	$('h2').after('<center>'+data+'</centar>');
+
+    				});
+      });
+});
+
+</script>
